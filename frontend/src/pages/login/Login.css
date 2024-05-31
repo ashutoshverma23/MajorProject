@@ -1,0 +1,42 @@
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Apply the same font weight to both labels */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: large;
+  font-weight: 500;
+}
+
+.submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+}
+
+.login-container .signup-link {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
