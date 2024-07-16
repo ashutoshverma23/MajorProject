@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,8 +9,12 @@ const Footer = () => {
         <div className="items-center justify-center">
           <div className="flex flex-col text-neutral-200">
             <ul>
-              <li>About Us</li>
-              <li>Stories</li>
+              <Link to="/about-us">
+                <li>About Us</li>
+              </Link>
+              <Link to="/blogs">
+                <li>Blogs</li>
+              </Link>
               <li>Privacy Policy</li>
               <li>Contact us</li>
             </ul>
