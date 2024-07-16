@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./SignUp.css"; // Importing CSS file
 import { useSignup } from "../../hooks/useSignup"; // Importing useSignup from hooks folder
 import { Link } from "react-router-dom"; // Importing Link from react-router-dom
 
@@ -19,11 +18,11 @@ function SignUp() {
   };
 
   return (
-    <div className="mt-40">
+    <div className="mt-6 p-4">
       <h2 className="text-center mb-5 text-3xl font-bold">Sign Up</h2>
       <form
         onSubmit={handleSubmit}
-        className="container mx-auto mt-8 w-1/2 bg-orange-100 p-5 rounded-sm mb-8"
+        className="flex flex-col container mx-auto mt-8 w-80 md:w-1/2 xl:w-1/3 bg-orange-100 p-5 rounded-sm mb-8"
       >
         <div className="mb-4">
           <label htmlFor="Fullname">Full Name</label>
@@ -69,7 +68,7 @@ function SignUp() {
 
         <button
           type="submit"
-          className="w-1/2 p-2 rounded-sm bg-blue-500 text-white hover:bg-blue-600 mx-auto"
+          className="w-1/2 p-2 rounded-sm bg-orange-500 text-white hover:bg-orange-600 mx-auto"
         >
           Sign Up
         </button>

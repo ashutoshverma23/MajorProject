@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import FAQPage from "./pages/faq/Faq";
@@ -16,6 +21,7 @@ import BlogPage from "./pages/blogs/blogPage";
 
 const AppLayout = () => {
   const { authUser } = useAuthContext();
+  const location = useLocation();
 
   return (
     <div className="app">
@@ -35,9 +41,9 @@ const AppLayout = () => {
         <Route path="/reports" element={<Reports />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/write-story" element={<StoryPage />} />
-        <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/blogs/*" element={<BlogPage />} />
       </Routes>
-      <Footer />
+      <Footer className="mt-auto" />
     </div>
   );
 };

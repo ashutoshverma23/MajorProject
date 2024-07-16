@@ -11,6 +11,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   background-color: #fefefe;
+  padding-top: 90px;
 }
 
 button {

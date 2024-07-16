@@ -1,12 +1,11 @@
 import React from "react";
-import "./Footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-800 py-4">
-      <div className="flex md:flex-row flex-col justify-around items-center min-h-32">
-        <div className="items-center justify-center">
+    <footer className="bg-zinc-800 md:py-4">
+      <div className="flex flex-row justify-around items-center min-h-32">
+        <div className="md:items-center md:justify-center">
           <div className="flex flex-col text-neutral-200">
             <ul>
               <Link to="/about-us">

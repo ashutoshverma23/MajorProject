@@ -4,19 +4,23 @@ import saathiHero from "../../../assets/images/saathi-hero.jpg";
 
 const Hero = () => {
   return (
-    <div>
-      <img
-        src={saathiHero}
-        alt="heroImage"
-        className="w-full overflow-hidden object-cover"
-      />
-      <div class="absolute top-1/2 left-[40%] uppercase">
-        <p className="text-4xl font-bold text-white">
-          <span className="text-orange-400 text-6xl">SAATHI</span>{" "}
-        </p>
-        <h1 className="text-4xl font-bold text-white">
-          Your Personal Mental <br /> Health Companion
-        </h1>
+    <div className="relative">
+      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh]  ">
+        <img
+          src={saathiHero}
+          alt="writeStory"
+          className="absolute w-full h-full object-cover object-center"
+        />
+      </div>
+      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+        <div className="text-center text-white p-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4">
+            Welcome to <span className="text-orange-400 uppercase">Saathi</span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl">
+            Your Mental Health Companion
+          </p>
+        </div>
       </div>
     </div>
   );
