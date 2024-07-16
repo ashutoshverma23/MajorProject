@@ -1,14 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
-  margin: 0;
-  padding: 0;
   font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
 }
 
 body {
   background: #ebebeb;
-  /* min-height: 100vh; */
   overflow-x: hidden;
+  margin: 0;
+  background-color: #fefefe;
 }
 
 button {
@@ -20,12 +22,14 @@ button {
 
 .flex-container {
   display: flex;
+  justify-content: center;
 }
 
 .flex-item {
   flex: 1; /* This ensures both items take equal space */
   width: 50%; /* Each item takes half of the container's width */
   box-sizing: border-box; /* Ensures padding and border are included in the width */
+  flex-direction: row;
 }
 
 @media screen and (max-width: 768px) {
@@ -66,4 +70,17 @@ button {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #242424;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Apply the same font weight to both labels */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

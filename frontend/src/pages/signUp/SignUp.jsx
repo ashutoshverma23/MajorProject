@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SignUp.css"; // Importing CSS file
 import { useSignup } from "../../hooks/useSignup"; // Importing useSignup from hooks folder
+import { Link } from "react-router-dom"; // Importing Link from react-router-dom
 
 function SignUp() {
   const [inputs, setInputs] = useState({
@@ -18,10 +19,13 @@ function SignUp() {
   };
 
   return (
-    <div className="login-container">
-      <h2 className="heading">Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
+    <div className="mt-40">
+      <h2 className="text-center mb-5 text-3xl font-bold">Sign Up</h2>
+      <form
+        onSubmit={handleSubmit}
+        className="container mx-auto mt-8 w-1/2 bg-orange-100 p-5 rounded-sm mb-8"
+      >
+        <div className="mb-4">
           <label htmlFor="Fullname">Full Name</label>
           <input
             type="text"
@@ -59,11 +63,14 @@ function SignUp() {
             }
           />
         </div>
-        <div className="signup-link">
-          Already have an account? <a href="/login">Log In</a>
+        <div className="mt-2 mb-2">
+          Already have an account? <Link to="/login">Log In</Link>
         </div>
 
-        <button type="submit" className="submit">
+        <button
+          type="submit"
+          className="w-1/2 p-2 rounded-sm bg-blue-500 text-white hover:bg-blue-600 mx-auto"
+        >
           Sign Up
         </button>
       </form>

@@ -1,17 +1,13 @@
 import "./Navbar.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import saathiLogo from "./saathi-logo.png";
+import saathiLogo from "../../assets/images/saathiLogo.png";
 import { useAuthContext } from "../../context/AuthContext";
 import useLogout from "../../hooks/useLogout";
 
 const Navbar = () => {
-  const isHomePage = () => {
-    return location.pathname === "/";
-  };
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
 
   const { authUser } = useAuthContext();
   const { logout } = useLogout();
@@ -25,18 +21,40 @@ const Navbar = () => {
     window.location.href = "/";
   };
 
+  const handleScroll = () => {
+    if (window.scrollY >= 60) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="box">
+    <div className={`box ${scrolled ? "scrolled" : ""}`}>
+      <img
+        src={saathiLogo}
+        alt="logo"
+        className={`logo ${scrolled ? "hidden" : ""}`}
+      />
       <header className="header">
-        <img src={saathiLogo} alt="logo" className="logo" />
         <ul className={`Navbar ${isMenuOpen ? "open" : ""}`}>
-          {!isHomePage() && (
-            <Link to="/">
-              <li className="Home">Home</li>
-            </Link>
-          )}
+          <Link to="/">
+            <li className="Home">Home</li>
+          </Link>
+
           <li className="Faq">
             <Link to="/faq">FAQs</Link>{" "}
+          </li>
+          <li>
+            <Link to="/write-story">Write Your Story</Link>
+          </li>
+          <li>
+            <Link to="/blogs">Blogs</Link>
           </li>
           <li>
             {authUser ? (

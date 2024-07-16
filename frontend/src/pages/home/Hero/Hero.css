@@ -1,0 +1,16 @@
+.heroText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -40%);
+  text-align: center;
+  color: white;
+}
+
+.heroText .centerText {
+  color: orange;
+}
+
+.heroText .welcomeText {
+  font-weight: bold;
+}

@@ -10,6 +10,9 @@ import Reports from "./pages/reports/Reports";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import { useAuthContext } from "./context/AuthContext";
 import { Navigate } from "react-router-dom";
+import Footer from "./components/footer/Footer";
+import StoryPage from "./pages/story/storyPage";
+import BlogPage from "./pages/blogs/blogPage";
 
 const AppLayout = () => {
   const { authUser } = useAuthContext();
@@ -31,7 +34,10 @@ const AppLayout = () => {
         <Route path="/chat" element={<Chat />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/write-story" element={<StoryPage />} />
+        <Route path="/blogs" element={<BlogPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
