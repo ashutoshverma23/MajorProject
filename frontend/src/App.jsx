@@ -33,7 +33,7 @@ const AppLayout = () => {
         />
         <Route path="/chat" element={<Chat />} />
         <Route path="/reports" element={<Reports />} />
-        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/write-story" element={<StoryPage />} />
         <Route path="/blogs" element={<BlogPage />} />
       </Routes>

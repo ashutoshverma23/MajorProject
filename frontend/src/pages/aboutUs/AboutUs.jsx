@@ -1,9 +1,8 @@
 import React from "react";
-import "./AboutUs.css";
 import aboutus from "./about-us.png";
 import aboutUs from "../../assets/images/about-us.jpg";
 
-function AboutUs() {
+const AboutUs = () => {
   return (
     <>
       <div className="relative">
@@ -37,6 +36,6 @@ function AboutUs() {
       </div>
     </>
   );
-}
+};
 
 export default AboutUs;

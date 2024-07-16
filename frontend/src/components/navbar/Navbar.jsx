@@ -57,6 +57,9 @@ const Navbar = () => {
             <Link to="/blogs">Blogs</Link>
           </li>
           <li>
+            <Link to="/about-us">About Us</Link>
+          </li>
+          <li>
             {authUser ? (
               <div id="logout-button" onClick={handleLogout}>
                 Logout
