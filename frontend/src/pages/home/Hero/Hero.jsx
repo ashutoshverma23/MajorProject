@@ -1,11 +1,10 @@
 import React from "react";
-import "./Hero.css";
 import saathiHero from "../../../assets/images/saathi-hero.jpg";
 
 const Hero = () => {
   return (
     <div className="relative">
-      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh]  ">
+      <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[80vh] 2xl:h-[60vh]">
         <img
           src={saathiHero}
           alt="writeStory"

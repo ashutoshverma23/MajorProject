@@ -5,16 +5,20 @@ import aboutUs from "../../assets/images/about-us.jpg";
 const AboutUs = () => {
   return (
     <>
-      <div className="relative">
-        <img src={aboutUs} alt="writeStory" className="w-full" />
-        <h1 className="md:text-8xl uppercase text-3xl text-center text-white font-bold absolute top-1/2 left-1/2 transform -translate-x-1/4 -translate-y-1/2">
+      <div className="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] lg:h-[70vh] xl:h-[60vh]">
+        <img
+          src={aboutUs}
+          alt="writeStory"
+          className="absolute w-full h-full object-cover object-cente"
+        />
+        <h1 className="md:text-8xl w-full uppercase text-5xl text-center text-white font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           About us
         </h1>
       </div>
-      <div className="flex justify-center md:flex-row flex-col mt-16 mb-16">
-        <div className="w-1/2 flex-1">
-          <div className="flex flex-col items-center justify-center text-justify max-w-[620px]">
-            <div className="m-1 ml-20 text-lg">
+      <div className="flex justify-center items-center md:flex-row flex-col mt-8 mb-8">
+        <div className="md:w-1/2 flex">
+          <div className="flex flex-col items-center justify-center text-justify md:w-[540px] 2xl:w-[660px] w-72 mx-auto">
+            <div className="md:text-lg xl:text-2xl">
               <p>
                 Our mission is to provide support and resources for individuals
                 struggling with mental health issues. We believe in promoting
@@ -28,10 +32,8 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 w-1/2 flex-row">
-          <div className="flex flex-col items-center justify-center">
-            <img src={aboutus} alt="about-us" className="w-9/12 p-4" />
-          </div>
+        <div className="md:w-1/2 w-3/4 mx-auto">
+          <img src={aboutus} alt="about-us" className="p-4" />
         </div>
       </div>
     </>

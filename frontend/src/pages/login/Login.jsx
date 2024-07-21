@@ -13,7 +13,7 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-6 p-4">
+    <div className="flex justify-center flex-col  mt-6 p-4 min-h-[70vh]">
       <h2 className="text-center mb-5 text-3xl font-bold">
         Login to store the Results
       </h2>

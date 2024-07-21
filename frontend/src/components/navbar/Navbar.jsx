@@ -30,6 +30,10 @@ const Navbar = () => {
     }
   };
 
+  const handleMenuClick = () => {
+    setIsMenuOpen(false);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -50,7 +54,7 @@ const Navbar = () => {
       />
       <header className="flex justify-between items-center w-4/5 py-2">
         <ul className={`Navbar ${isMenuOpen ? "open" : ""}`}>
-          <NavLink exact to="/" className="block">
+          <NavLink exact to="/" className="block" onClick={handleMenuClick}>
             <li
               className={`font-bold text-gray-800 hover:text-gray-600 ${
                 location.pathname === "/" ? "text-orange-500" : ""
@@ -59,7 +63,7 @@ const Navbar = () => {
               Home
             </li>
           </NavLink>
-          <NavLink to="/faq" className="block">
+          <NavLink to="/faq" className="block" onClick={handleMenuClick}>
             <li
               className={`font-bold text-gray-800 hover:text-gray-600 ${
                 location.pathname === "/faq" ? "text-orange-500" : ""
@@ -68,7 +72,11 @@ const Navbar = () => {
               FAQs
             </li>
           </NavLink>
-          <NavLink to="/write-story" className="block">
+          <NavLink
+            to="/write-story"
+            className="block"
+            onClick={handleMenuClick}
+          >
             <li
               className={`font-bold text-gray-800 hover:text-gray-600 ${
                 location.pathname === "/write-story" ? "text-orange-500" : ""
@@ -77,7 +85,7 @@ const Navbar = () => {
               Write Your Story
             </li>
           </NavLink>
-          <NavLink to="/blogs" className="block">
+          <NavLink to="/blogs" className="block" onClick={handleMenuClick}>
             <li
               className={`font-bold text-gray-800 hover:text-gray-600 ${
                 location.pathname === "/blogs" ? "text-orange-500" : ""
@@ -86,14 +94,14 @@ const Navbar = () => {
               Blogs
             </li>
           </NavLink>
-          <NavLink to="/about-us" className="block">
-            <li
-              className={`font-bold text-gray-800 hover:text-gray-600 ${
-                location.pathname === "/about-us" ? "text-orange-500" : ""
-              }`}
-            >
-              About Us
-            </li>
+          <NavLink
+            to="/about-us"
+            onClick={handleMenuClick}
+            className={`font-bold text-gray-800 hover:text-gray-600 ${
+              location.pathname === "/about-us" ? "text-orange-500" : ""
+            }`}
+          >
+            About Us
           </NavLink>
           <li>
             {authUser ? (
@@ -101,32 +109,32 @@ const Navbar = () => {
                 Logout
               </div>
             ) : (
-              <NavLink to={"/login"} className="block">
-                <li
-                  className={`font-bold text-gray-800 hover:text-gray-600 ${
-                    location.pathname === "/login" ? "text-orange-500" : ""
-                  }`}
-                >
-                  LogIn
-                </li>
+              <NavLink
+                to={"/login"}
+                onClick={handleMenuClick}
+                className={`font-bold text-gray-800 hover:text-gray-600 ${
+                  location.pathname === "/login" ? "text-orange-500" : ""
+                }`}
+              >
+                LogIn
               </NavLink>
             )}
           </li>
           {authUser ? (
-            <NavLink to="/reports" className="block">
-              <li
-                className={`font-bold text-gray-800 hover:text-gray-600 ${
-                  location.pathname === "/reports" ? "text-orange-500" : ""
-                }`}
-              >
-                Reports
-              </li>
+            <NavLink
+              to="/reports"
+              onClick={handleMenuClick}
+              className={`font-bold text-gray-800 hover:text-gray-600 ${
+                location.pathname === "/reports" ? "text-orange-500" : ""
+              }`}
+            >
+              Reports
             </NavLink>
           ) : (
             ""
           )}
           {!authUser && (
-            <NavLink to="/signup" className="block">
+            <NavLink to="/signup" className="block" onClick={handleMenuClick}>
               <li
                 className={`font-bold text-gray-800 hover:text-gray-600 ${
                   location.pathname === "/signup" ? "text-orange-500" : ""
